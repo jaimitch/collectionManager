@@ -1,0 +1,61 @@
+<html>
+
+<head>
+    <link rel="stylesheet" type="" href="/public/styles.css">
+</head>
+
+<body>
+    <div class="magnet-container">
+        {{^magnets}}Enter Into The Dragon{{/magnets}} {{#magnets.length}}Here's all your magnets!{{/magnets.length}} 
+        <div>
+            <a href="/add">Add a Ninja</a>
+        </div>
+        {{#magnets}}
+        <div class="magnet-card">
+            <form method="post" action="/update/{{_id}}">
+
+                <div>
+                    <label for="name">Ninja name:</label>
+                    <input class="display" ttype="text" id="name" name="name" placeholder="Give your ninja a name" value="{{name}}">
+                </div>
+                <div>
+                    <label for="description">Decription:</label>
+                    <input class="display" type="text" id="description" name="description" placeholder="Describe your ninja" value="{{description}}">
+                </div>
+                <div class="card-text">Ninja Theme: {{theme}}</div>
+                <div>
+                    <label for="dateAcquired">Date Acquired:</label>
+                    <input class="display" type="text" id="dateAcquired" name="dateAcquired" placeholder="unknown" value="{{dateAcquiredFormatted}}">
+                </div>
+                <div>
+                    <label for="cost">Ninja Dues: $</label>
+                    <input class="display" id="cost" type="number" name="cost" step=".01" min="0" placeholder="unknown" value={{cost}}>
+                </div>
+                {{#gift}}
+                <div class="card-text">This magnet was a gift</div>
+                {{/gift}}
+                <div class="location">
+                    <label for="city">From:</label> 
+                    {{#locationFrom}}
+                    <input class="display" type="text" name="city" placeholder="City (optional)" value="{{city}}" size="{{city.length}}">
+                    <input class="display" type="text" name="state" placeholder="State (optional)" value="{{state}}">
+                    <input class="display" type="text" name="country" placeholder="Country" value="{{country}}"> 
+                    {{/locationFrom}}
+                </div>
+                <div>
+                    <label for="colors">Colors:</label>
+                    <input class="display" name="colors" placeholder="What color is your belt" value="{{#colors}}{{.}} {{/colors}}">
+                </div>
+                <button type="submit">Update Ninja Details</button>
+            </form>
+            <form method="post" action="/delete/{{_id}}">
+                <button type="submit">Delete Ninja</button>
+            </form>
+        </div>
+        {{/magnets}}
+    </div>
+
+
+</body>
+
+</html>

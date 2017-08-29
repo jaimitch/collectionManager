@@ -1,0 +1,54 @@
+<html>
+
+<head>
+    <link rel="stylesheet" type="" href="/public/styles.css">
+</head>
+
+<body>
+    You Have Completed Your Ninja Training.  Enter Your Info.
+    <form method="POST" action='/add'>
+        <div>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Select Your Ninja Name" autofocus>
+        </div>
+        <div>
+            <label for="description">Decription:</label>
+            <input type="text" id="description" name="description" placeholder="Describe your ninja">
+        </div>
+        <div>
+            <label for="theme">Ninja Specialty:</label>
+            <select id="theme" name="theme">
+                    <option value="Ka-Razy">Ka-Razy</option>
+                    <option value="Whoop-Ass">Whoop-Ass</option>
+                    <option value="The-Dozens">The Dozens</option>
+                    <option value="Wuss-Puss">Wuss-Puss</option>
+                </select>
+        </div>
+        <div> 
+            <label for="dateAcquired">When Did You Start Your Ninja Training?</label>
+            <input type="date" id="dataAcquired" name="dateAcquired">
+        </div>
+        <div>Where Was Your Ninja Training?
+            <input type="text" name="city" placeholder="City (optional)">
+            <input type="text" name="state" placeholder="State (optional)">
+            <input type="text" name="country" placeholder="Country"></div>
+        <div>
+            <label for="colors">Colors:</label>
+            <input name="colors" placeholder="What Is Your Belt Color?"></input>
+        </div>
+        <div>
+            <label for="cost">How Much Was Your Ninja Dues?(optional): $</label>
+            <input id="cost" type="number" name="cost" step=".01" min="0">
+        </div>
+        <div>Were you the Sensei Pet?
+            <input type="radio" name="suck-up" id="yes" value==true>
+            <label for="yes">Yes</label>
+            <input type="radio" name="swagged-out" id="no" value=false>
+            <label for="no">No</label></div>
+        <div>
+            <button type="submit">Add The Ninja!</button>
+        </div>
+    </form>
+</body>
+
+</html>
